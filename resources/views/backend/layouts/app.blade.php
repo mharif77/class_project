@@ -11,7 +11,8 @@
     <meta name="author" content="hencework" />
 
     <!-- Favicon -->
-    @include('backend.layouts.css')
+     @yield('css')
+    <!-- @include('backend.layouts.css') -->
 </head>
 
 <body>
@@ -57,7 +58,9 @@
 
     <!-- JavaScript -->
 
-    @include('backend.layouts.js')
+    <!-- @include('backend.layouts.js') -->
+
+    @yield('js')
 </body>
 
 </html>
