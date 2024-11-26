@@ -19,14 +19,14 @@ class Doctor extends Authenticatable
      * @var array<int, string>
      */
 
-     protected $guard = 'doctor';
+    protected $guard = 'doctor';
 
     protected $fillable = [
         'name',
         'email',
         'password',
         'specialist_id',
-        
+
     ];
 
     /**
@@ -48,7 +48,8 @@ class Doctor extends Authenticatable
         'password' => 'hashed',
     ];
 
-    public function specilalist(){
-        return $this-> BelongsTo(Specialist::class);
+    public function specialist()
+    {
+        return $this->belongsTo(Specialist::class);
     }
 }

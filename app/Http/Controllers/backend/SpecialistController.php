@@ -13,7 +13,7 @@ class SpecialistController extends Controller
      */
     public function index()
     {
-        $items = Specialist::orderBy('id', 'desc', )->get();
+        $items = Specialist::orderBy('id', 'desc')->get();
         return view('backend.specialist.index', compact('items'));
     }
 
@@ -31,13 +31,14 @@ class SpecialistController extends Controller
     public function store(Request $request)
     {
         $specialist = new Specialist;
+        
         $specialist->name = $request->specialist;
         $specialist->details = $request->details;
-
-        // return $specialist->save();
-
+        
         $specialist->save();
-        return redirect()->route('specialist.index')->with('msg', "successfully created");
+
+        return redirect()->route('specialist.index')->with('msg', "Successfully Created");
+        
     }
 
     /**
@@ -45,7 +46,8 @@ class SpecialistController extends Controller
      */
     public function show(Specialist $specialist)
     {
-        //
+        //dd($specialist);
+        return view('backend.specialist.show', compact('specialist'));
     }
 
     /**
@@ -53,9 +55,6 @@ class SpecialistController extends Controller
      */
     public function edit(Specialist $specialist)
     {
-        // return $specialist;
-        // $data = $specialist
-
         return view('backend.specialist.edit', compact('specialist'));
     }
 
@@ -64,14 +63,12 @@ class SpecialistController extends Controller
      */
     public function update(Request $request, Specialist $specialist)
     {
-        // return $specialist;
-        // return  $request;
-
         $specialist->name = $request->specialist;
         $specialist->details = $request->details;
-        $specialist->update();
-        return redirect()->route('specialist.index')->with('msg', "updated successfully");
 
+        $specialist->update();
+
+        return redirect()->route('specialist.index')->with('msg', 'Updated successfully');
     }
 
     /**
@@ -79,8 +76,7 @@ class SpecialistController extends Controller
      */
     public function destroy(Specialist $specialist)
     {
-        $specialist->delete();
-
-        return redirect()->route('specialist.index')->with('msg', 'Deleted Successfully');
+         $specialist->delete();
+         return redirect()->route('specialist.index')->with('msg', 'Deleted Successfully');
     }
 }
