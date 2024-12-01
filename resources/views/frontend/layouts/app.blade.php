@@ -7,22 +7,26 @@
    <meta name="description" content="">
    <meta name="viewport" content="width=device-width, initial-scale=1">
 
+   @section('cssfiles')
    <!-- Place favicon.ico in the root directory -->
-   <link rel="shortcut icon" type="image/x-icon" href="assets/img/logo/favicon.png">
+   <link rel="shortcut icon" type="image/x-icon" href="{{asset('assets/img/logo/favicon.png')}}">
 
    <!-- CSS here -->
-   <link rel="stylesheet" href="assets/css/bootstrap.css">
-   <link rel="stylesheet" href="assets/css/animate.css">
-   <link rel="stylesheet" href="assets/css/swiper-bundle.css">
-   <link rel="stylesheet" href="assets/css/slick.css">
-   <link rel="stylesheet" href="assets/css/style.css">
-   <link rel="stylesheet" href="assets/css/icofont.css">
-   <link rel="stylesheet" href="assets/css/icofont.min.css">
-   <link rel="stylesheet" href="assets/css/magnific-popup.css">
-   <link rel="stylesheet" href="assets/css/font-awesome-pro.css">
-   <link rel="stylesheet" href="assets/css/spacing.css">
-   <link rel="stylesheet" href="assets/css/custom-animation.css">
-   <link rel="stylesheet" href="assets/css/main.css">
+   <link rel="stylesheet" href="{{asset('assets/css/bootstrap.css')}}">
+   <link rel="stylesheet" href="{{asset('assets/css/animate.css')}}">
+   <link rel="stylesheet" href="{{asset('assets/css/swiper-bundle.css')}}">
+   <link rel="stylesheet" href="{{asset('assets/css/slick.css')}}">
+   <link rel="stylesheet" href="{{asset('assets/css/style.css')}}">
+   <link rel="stylesheet" href="{{asset('assets/css/icofont.css')}}">
+   <link rel="stylesheet" href="{{asset('assets/css/icofont.min.css')}}">
+   <link rel="stylesheet" href="{{asset('assets/css/magnific-popup.css')}}">
+   <link rel="stylesheet" href="{{asset('assets/css/font-awesome-pro.css')}}">
+   <link rel="stylesheet" href="{{asset('assets/css/spacing.css')}}">
+   <link rel="stylesheet" href="{{asset('assets/css/custom-animation.css')}}">
+   <link rel="stylesheet" href="{{asset('assets/css/main.css')}}">
+   @show
+   
+   
 </head>
 
 <body>
@@ -64,7 +68,7 @@
                   <div class="search__top d-flex justify-content-between align-items-center">
                      <div class="search__logo">
                         <a href="index.html">
-                           <img src="assets/img/logo/logo-white.png" alt="img">
+                           <img src="{{asset('assets/img/logo/logo-white.png')}}" alt="img">
                         </a>
                      </div>
                      <div class="search__close">
@@ -106,47 +110,7 @@
    <!-- search popup end -->
 
    <!-- rr-offcanvus-area-start -->
-   <div class="rroffcanvas-area">
-      <div class="rroffcanvas">
-         <div class="rroffcanvas__close-btn">
-            <button class="close-btn"><i class="fal fa-times"></i></button>
-         </div>
-         <div class="rroffcanvas__logo">
-            <a href="index.html">
-               <img src="assets/img/logo/logo-white.png" alt="img">
-            </a>
-         </div>
-         <div class="rr-main-menu-mobile d-xl-none"></div>
-         <div class="rroffcanvas__contact-info">
-            <div class="rroffcanvas__contact-title">
-               <h5>Contact us</h5>
-            </div>
-            <ul>
-               <li>
-                  <i class="fa-light fa-location-dot"></i>
-                  <a href="htrrs://www.google.com/maps/@23.8223586,90.3661283,15z" target="_blank">Melbone st,
-                     Australia, Ny 12099</a>
-               </li>
-               <li>
-                  <i class="fas fa-envelope"></i>
-                  <a href="mailto:rubelmah55@gmail.com">rubelmah55@gmail.com</a>
-               </li>
-               <li>
-                  <i class="fal fa-phone-alt"></i>
-                  <a href="tel:+48555223224">+48 555 223 224</a>
-               </li>
-            </ul>
-         </div>
-         <div class="rroffcanvas__social">
-            <div class="social-icon">
-               <a href="#"><i class="fab fa-twitter"></i></a>
-               <a href="#"><i class="fab fa-instagram"></i></a>
-               <a href="#"><i class="fab fa-facebook-f"></i></a>
-               <a href="#"><i class="fab fa-pinterest-p"></i></a>
-            </div>
-         </div>
-      </div>
-   </div>
+   @include('frontend.layouts.offcanvas')
    <div class="body-overlay"></div>
    <!-- rr-offcanvus-area-end -->
 
@@ -167,7 +131,7 @@
 
 
    <footer>
-      <div class="rr-footer-main p-relative fix" data-background="assets/img/footer/footer-bg.jpg">
+      <div class="rr-footer-main p-relative fix" data-background="{{asset('assets/img/footer/footer-bg.jpg')}}">
 
        <!-- footer area start -->
        <div class="rr-footer-area pt-125 p-relative fix">
@@ -255,49 +219,32 @@
       <!-- footer area end -->
 
          <!-- copy-right area start -->
-         <div class="rr-copyright-area p-relative">
-            <div class="container rr-copyright-broder rr-copyright-space">
-               <div class="row align-items-center">
-                  <div class="col-xl-6 col-lg-6 col-md-6 col-12 wow rrfadeUp" data-wow-duration=".9s"
-                     data-wow-delay=".3s">
-                     <div class="rr-copyright-left text-center text-md-start">
-                        <p>Copyright © 2024 <a href="#"> Mekina, </a> All Rights Reserved.</p>
-                     </div>
-                  </div>
-                  <div class="col-xl-6 col-lg-6 col-md-6 col-12 wow rrfadeUp" data-wow-duration=".9s"
-                     data-wow-delay=".5s">
-                     <div class="rr-copyright-right text-center text-md-end">
-                        <a href="about.html">About Us </a>
-                        <a href="service.html">Events</a>
-                        <a href="blog.html">News</a>
-                        <a href="service.html">Portfolio</a>
-                     </div>
-                  </div>
-               </div>
-            </div>
-         </div>
+         @include('frontend.layouts.footer')
          <!-- copy-right area end -->
       </div>
    </footer>
 
-   <!-- JS here -->
-   <script src="assets/js/vendor/jquery.js"></script>
-   <script src="assets/js/vendor/waypoints.js"></script>
-   <script src="assets/js/bootstrap-bundle.js"></script>
-   <script src="assets/js/ajax-form.js"></script>
-   <script src="assets/js/imagesloaded-pkgd.js"></script>
-   <script src="assets/js/isotope-pkgd.js"></script>
-   <script src="assets/js/jarallax.js"></script>
-   <script src="assets/js/magnific-popup.js"></script>
-   <script src="assets/js/nice-select.js"></script>
-   <script src="assets/js/purecounter.js"></script>
-   <script src="assets/js/jquery-knob.js"></script>
-   <script src="assets/js/jquery-appear.js"></script>
-   <script src="assets/js/wow.js"></script>
-   <script src="assets/js/slick.js"></script>
-   <script src="assets/js/swiper-bundle.js"></script>
-   <script src="assets/js/main.js"></script>
+@section('jsfiles')
 
+
+   <!-- JS here -->
+   <script src="{{asset('assets/js/vendor/jquery.js')}}"></script>
+   <script src="{{asset('assets/js/vendor/waypoints.js')}}"></script>
+   <script src="{{asset('assets/js/bootstrap-bundle.js')}}"></script>
+   <script src="{{asset('assets/js/ajax-form.js')}}"></script>
+   <script src="{{asset('assets/js/imagesloaded-pkgd.js')}}"></script>
+   <script src="{{asset('assets/js/isotope-pkgd.js')}}"></script>
+   <script src="{{asset('assets/js/jarallax.js')}}"></script>
+   <script src="{{asset('assets/js/magnific-popup.js')}}"></script>
+   <script src="{{asset('assets/js/nice-select.js')}}"></script>
+   <script src="{{asset('assets/js/purecounter.js')}}"></script>
+   <script src="{{asset('assets/js/jquery-knob.js')}}"></script>
+   <script src="{{asset('assets/js/jquery-appear.js')}}"></script>
+   <script src="{{asset('assets/js/wow.js')}}"></script>
+   <script src="{{asset('assets/js/slick.js')}}"></script>
+   <script src="{{asset('assets/js/swiper-bundle.js')}}"></script>
+   <script src="{{asset('assets/js/main.js')}}"></script>
+   @show
 </body>
 
 </html>
