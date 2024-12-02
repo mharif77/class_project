@@ -15,7 +15,7 @@ class DatabaseSeeder extends Seeder
     {
         // \App\Models\User::factory(10)->create();
 
-          \App\Models\Specialist::factory(50)->create();
+          \App\Models\Specialist::factory(10)->create();
 
         // \App\Models\User::factory()->create([
         //     'name' => 'Test User',
@@ -35,7 +35,9 @@ class DatabaseSeeder extends Seeder
     'name' => 'MD SHAFIN AHMED',
     'email' => 'shafin@gmail.com',
     'password'=>Hash::make('admin123'),
-    'specialist_id' =>'1'
+    'specialist_id' =>'1',
+    'photo' => 'images/nophoto.jpg',
+    'status' => 'active'
 
 ]);
 

@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('doctor_id');
             $table->date('date');
             $table->string('remarks');
+            $table->enum('status',['pending','confirmed'])->default('pending');
              $table->timestamps();
         });
     }
